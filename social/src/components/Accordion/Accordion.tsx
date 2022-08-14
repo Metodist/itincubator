@@ -1,18 +1,27 @@
 import React from "react";
 
-function Accordion(props: any) {
-    return (
-        <div>
-            <AccordionTitle title={props.title}/>
-            <AccordionBody/>
+function Accordion(props: AccordionPropsType) {
+    if (props.collapsed === false) {
+        return (
+            <div>
+                <AccordionTitle titleValue={props.title}/>
+                <AccordionBody/>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <AccordionTitle titleValue={props.title}/>
+            </div>
 
-        </div>
+        )
+    }
 
-    )
+
 }
 
-function AccordionTitle(props: any) {
-    return <h3>{props.title}</h3>
+function AccordionTitle(props: AccordionTitlePropsType) {
+    return <h3>{props.titleValue}</h3>
 }
 
 function AccordionBody() {
@@ -25,4 +34,13 @@ function AccordionBody() {
     )
 }
 
+type AccordionPropsType = {
+    title: string
+    collapsed: boolean
+}
+
+type AccordionTitlePropsType = {
+    titleValue: string
+
+}
 export default Accordion;

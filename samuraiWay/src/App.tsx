@@ -3,16 +3,33 @@ import './App.css';
 
 function App() {
     return (
-        <div className="App">
-            <h1>Заголовок</h1>
-            <ul>
-                <li>css</li>
-                <li>html</li>
-                <li>js</li>
-                <li>react</li>
-            </ul>
+        <div>
+            <Header/>
+            <Technologies/>
         </div>
     );
+}
+
+
+function Header() {
+    return (
+        <div>
+            <a href="#">Home</a>
+            <a href="#">News Feed</a>
+            <a href="#">Messages</a>
+        </div>
+    )
+}
+
+function Technologies() {
+    return (
+        <ul>
+            <li>css</li>
+            <li>html</li>
+            <li>js</li>
+            <li>react</li>
+        </ul>
+    )
 }
 
 export default App;

@@ -30,6 +30,7 @@ function App() {
             <NewComponents students={students}/>
             <CarsComponents cars={topCars}/>*/}
             <button onClick={(event:MouseEvent<HTMLButtonElement>)=>onClickHandler('vasya')}>MyYouTubeChannel -1</button>
+            <button onClick={()=>onClickHandler('ivan')}>MyYouTubeChannel -2</button>
         </>
     );
 }

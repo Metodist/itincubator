@@ -13,8 +13,7 @@ type StudentType = {
 export const NewComponents = (props: NewComponentsPropsType) => {
     return (
        <ul>
-           {props.students.map((el, index)=>{
-               debugger
+           {props.students.map((el)=>{
                 return(
                     <li key={el.id}>
                         <span>{el.name}</span>
@@ -27,18 +26,3 @@ export const NewComponents = (props: NewComponentsPropsType) => {
     )
 }
 
-/*
-<table>
-    <tr>
-        <th>Month</th>
-        <th>Savings</th>
-    </tr>
-    <tr>
-        <td>January</td>
-        <td>$100</td>
-    </tr>
-    <tr>
-        <td>February</td>
-        <td>$80</td>
-    </tr>
-</table>*/

@@ -4,6 +4,7 @@ import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponents} from "./components/NewComponents";
+import {CarsComponents} from "./components/CarsComponents";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <Body titleForBody={'Тело'}/>
             <Footer titleFooter={'Подвал'}/>
             <NewComponents students={students}/>
+            <CarsComponents cars={topCars}/>
         </>
     );
 }

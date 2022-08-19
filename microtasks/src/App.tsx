@@ -1,19 +1,22 @@
 import React, {MouseEvent} from 'react';
 import './App.css';
 
-import {Header} from "./site/Header";
+/*import {Header} from "./site/Header";
 import {Body} from "./site/Body";
 import {Footer} from "./site/Footer";
 import {NewComponents} from "./components/NewComponents";
-import {CarsComponents} from "./components/CarsComponents";
+import {CarsComponents} from "./components/CarsComponents";*/
+import {Button} from "./components/Button";
 
 /*type OnClickType = {
     name: string
 }*/
 
-const onClickHandler=(name: string)=>{
+/*
+const onClickHandler = (name: string) => {
     return console.log(name)
 }
+*/
 
 
 function App() {
@@ -21,6 +24,24 @@ function App() {
     //     return console.log('text')
     // }
 
+   /* const foo1 = () =>{
+       return console.log(100200)
+
+    }
+
+    const foo2 = (a: number) =>{
+        return console.log(a);
+    }
+*/
+
+    const ButtonFoo1=(s: string, age: number)=>{
+        console.log(s, age)
+    }
+
+    const ButtonFoo2=(s: string)=>{
+        console.log(s)
+
+    }
 
     return (
         <>
@@ -28,13 +49,17 @@ function App() {
             <Body titleForBody={'Тело'}/>
             <Footer titleFooter={'Подвал'}/>
             <NewComponents students={students}/>
-            <CarsComponents cars={topCars}/>*/}
+            <CarsComponents cars={topCars}/>
             <button onClick={(event:MouseEvent<HTMLButtonElement>)=>onClickHandler('vasya')}>MyYouTubeChannel -1</button>
-            <button onClick={()=>onClickHandler('ivan')}>MyYouTubeChannel -2</button>
+            <button onClick={()=>onClickHandler('ivan')}>MyYouTubeChannel -2</button>*/}
+
+
+
+            <Button name={'button 1'}  callBack={()=>ButtonFoo1('ivan', 21)}/>
+            <Button name={'button 2'} callBack={()=>ButtonFoo2('Vasya')}/>
         </>
     );
 }
-
 
 
 export default App;
@@ -59,3 +84,6 @@ const topCars = [
     {manufacturer:'Mercedes', model:'e63s'},
     {manufacturer:'Audi', model:'rs6'}
 ]*/
+
+
+

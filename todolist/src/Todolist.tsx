@@ -4,6 +4,9 @@ type TodolistPropsType={
     title: string
     titleNew?: number
     tasks: Array<TaskType>
+    removeTask:(id: number)=>void
+    filteredTask:(button:string)=>void
+
 }
 
 type TaskType={
@@ -21,20 +24,44 @@ export const Todo =(props: TodolistPropsType)=>{
                 <button>+</button>
             </div>
             <ul>
-                {props.tasks.map(el=>{
+                {props.tasks.map((el,index)=>{
                     return(
-                        <li><input type="checkbox" checked={el.isDone}/> <span>{el.title}</span></li>
+                        <li key={el.id}>
+                            <button onClick={(event)=>props.removeTask(el.id)}>X</button>
+                            <input type="checkbox" checked={el.isDone}/>
+                            <span>{el.title}</span>
+                        </li>
                     )
                 })}
-                {/*<li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>*/}
-                {/*<li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>*/}
-                {/*<li><input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[2].title}</span></li>*/}
             </ul>
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <button onClick={()=>props.filteredTask('All')}>All</button>
+                <button onClick={()=>props.filteredTask('Active')}>Active</button>
+                <button onClick={()=>props.filteredTask('Completed')}>Completed</button>
             </div>
         </div>
     )
 }
+
+/*
+const removeTask = (id: number) => {
+    setTasks1(tasks1.filter((el) => el.id !== id))
+}
+
+let [filteredValue, setFilteredValue] = useState('All')
+
+
+let filteredTasks = tasks1;
+
+if (filteredValue === 'Active') {
+    filteredTasks = tasks1.filter((el) => el.isDone)
+}
+
+if (filteredValue === 'Completed') {
+    filteredTasks = tasks1.filter((el) => !el.isDone)
+}
+
+
+const filteredTask = (button: string) => {
+    setFilteredValue(button)
+}*/

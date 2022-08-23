@@ -5,9 +5,8 @@ import {Todo} from "./Todolist";
 function App() {
     let title = "it incubator Todolist";
 
-    //export type FilteredType = All|
 
-    let [tasks1, setTasks1] = useState([
+    let [tasks, setTasks] = useState([
         {id: 1, title: "HTML&CSS", isDone: true},
         {id: 2, title: "JS", isDone: true},
         {id: 3, title: "ReactJS", isDone: false},
@@ -15,39 +14,33 @@ function App() {
     ])
 
 
-
-    let [filteredValue, setFilteredValue] = useState('All')
-
-
-    let filteredTasks = tasks1;
-
-    if (filteredValue === 'Active') {
-        filteredTasks = tasks1.filter((el) => el.isDone)
-    }
-
-    if (filteredValue === 'Completed') {
-        filteredTasks = tasks1.filter((el) => !el.isDone)
-    }
-
-
-    const filteredTask = (button: string) => {
-        setFilteredValue(button)
-    }
-
     const removeTask = (id: number) => {
-        setTasks1(tasks1.filter((el) => el.id !== id))
+        setTasks(tasks.filter((el) => el.id !== id))
     }
+
 
     return (
         <div className="App">
             <Todo title={title}
                   titleNew={100300}
-                  tasks={filteredTasks}
+                  tasks={tasks}
                   removeTask={removeTask}
-                  filteredTask={filteredTask}/>
+            />
+
         </div>
     );
 }
 
 
 export default App;
+
+/*
+return (
+    <div className="App">
+        <Todo title={title}
+              titleNew={100300}
+              tasks={filteredTasks}
+              removeTask={removeTask}
+              filteredTask={filteredButton}/>
+    </div>
+);*/

@@ -1,3 +1,34 @@
-ul li{
-  list-style-type: georgian;
+ul li {
+    list-style-type: georgian;
+}
+
+.app-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+"header header header"
+"navigation content content"
+"footer footer footer";
+    grid-template-rows: 60px 1fr 100px;
+    grid-template-columns: 2fr 10fr;
+}
+
+.header {
+    grid-area: header;
+    background: cornflowerblue;
+}
+
+.navigation {
+    background: chartreuse;
+    grid-area: navigation;
+}
+
+.content {
+    background: green;
+    grid-area: content;
+}
+
+.footer {
+    background: blueviolet;
+    grid-area: footer;
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import "./../App.css"
 
-export const Header=()=>{
+export const Footer=()=>{
     return (
-        <div className='header'>
-            header
+        <div className='footer'>
+            footer
         </div>
     )
 }

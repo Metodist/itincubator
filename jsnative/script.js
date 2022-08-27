@@ -27,10 +27,15 @@ const students = [
         isMarried: false,
         scores: 100
     }
-];
+]
 
-console.log(getNames(students))
+console.log(students.map(st => st.name))
+console.log(students.filter(el => el.scores >= 90))
 
-const getNames=(array)=>{
+const selfMadeFind = (array, func) => {
 
+    for (let i = 0; i < array.length; i++) {
+        if (func(array[i]))
+            return array[i]
+    }
 }

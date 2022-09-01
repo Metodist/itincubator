@@ -11,6 +11,8 @@ ul li {
 "footer footer footer";
     grid-template-rows: 60px 1fr 100px;
     grid-template-columns: 2fr 10fr;
+    width: 1900px;
+    margin: 0 auto;
 }
 
 .header {
@@ -23,7 +25,7 @@ ul li {
     grid-area: navigation;
 }
 
-.content {
+.profile {
     background: green;
     grid-area: content;
 }
@@ -31,4 +33,11 @@ ul li {
 .footer {
     background: blueviolet;
     grid-area: footer;
+}
+.content img{
+
+}
+
+.logo{
+    width: 50px;
 }

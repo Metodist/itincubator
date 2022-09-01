@@ -14,30 +14,3 @@ ul li {
     width: 1900px;
     margin: 0 auto;
 }
-
-.header {
-    grid-area: header;
-    background: cornflowerblue;
-}
-
-.navigation {
-    background: chartreuse;
-    grid-area: navigation;
-}
-
-.profile {
-    background: green;
-    grid-area: content;
-}
-
-.footer {
-    background: blueviolet;
-    grid-area: footer;
-}
-.content img{
-
-}
-
-.logo{
-    width: 50px;
-}

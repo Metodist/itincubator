@@ -1,0 +1,8 @@
+.header {
+    grid-area: header;
+    background: cornflowerblue;
+}
+
+.logo{
+    width: 50px;
+}
